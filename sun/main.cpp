@@ -118,6 +118,64 @@ void point_trans_rot_y(float angle, float* x, float* y, float* z)
     *z = (ox * -ps) + (oz * pc);
 }
 
+unsigned int get_image_index(unsigned int x, unsigned int y, unsigned int img_width)
+{
+    return (y*img_width*4 + x*4);
+}
+
+void apply_aliasing(std::vector<unsigned char> &img, unsigned int tex_width, unsigned int tex_height)
+{
+    unsigned int pos = 0;
+    
+    for (unsigned int y = 0; y < tex_height; y++)
+    {
+        for (unsigned int x = 0; x < tex_width; x++)
+        {
+            pos = get_image_index(x,y,tex_width);
+            
+            if (x > 1 && x < tex_width-1 && img[pos] == 0xff)
+            {
+                pos = get_image_index(x-1,y,tex_width);
+                
+                if (img[pos] != 0xff) {
+                    img[pos] += 0x28;
+                    img[pos+1] += 0x28;
+                    img[pos+2] += 0x28;
+                }
+                
+                pos = get_image_index(x+1,y,tex_width);
+                
+                if (img[pos] != 0xff) {
+                    img[pos] += 0x28;
+                    img[pos+1] += 0x28;
+                    img[pos+2] += 0x28;
+                }
+            }
+            
+            pos = get_image_index(x,y,tex_width);
+            
+            if (y > 1 && y < tex_height-1 && img[pos] == 0xff)
+            {
+                pos = get_image_index(x,y-1,tex_width);
+                
+                if (img[pos] != 0xff) {
+                    img[pos] += 0x28;
+                    img[pos+1] += 0x28;
+                    img[pos+2] += 0x28;
+                }
+                
+                pos = get_image_index(x,y+1,tex_width);
+                
+                if (img[pos] != 0xff) {
+                    img[pos] += 0x28;
+                    img[pos+1] += 0x28;
+                    img[pos+2] += 0x28;
+                }
+            }
+        }
+    }   
+}
+
 void perform_raytrace(std::string smd_in, std::string png_out, int tex_width, int tex_height, float sun_pitch, float sun_yaw)
 {
     std::vector<unsigned char> img;
@@ -220,6 +278,8 @@ void perform_raytrace(std::string smd_in, std::string png_out, int tex_width, in
         
         prev_progress = (floor(((float)py / (float)resolution) * 20.0f) / 20.0f) * 100.0f;
     }
+    
+    apply_aliasing(img, tex_width, tex_height);
     
     stop_timer(start_raytracing, "Ray-simulation time");
     
