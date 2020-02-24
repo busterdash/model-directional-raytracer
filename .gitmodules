@@ -1,3 +1,3 @@
-[submodule "bitmap-machine"]
-	path = bitmap-machine
-	url = https://github.com/busterdash/bitmap-machine
+[submodule "lodepng"]
+	path = lodepng
+	url = https://github.com/lvandeve/lodepng.git

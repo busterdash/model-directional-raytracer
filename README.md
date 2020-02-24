@@ -10,11 +10,11 @@ git submodule update --init
 ```
 
 ## Compiling
-* For simplicity, I use Orwell Dev-C++ to compile on Windows.
-* On Linux, a makefile is provided for compiling with the GNU C++ Compiler.
+* A Dev-C++ project file has been provided but is not necessary for compilation.
+* A makefile has been provided for compiling on either Windows or GNU/Linux operating systems.
 
 ## Testing
-* ```./sun.exe -in "house.smd" -out "texture.bmp"```
+* ```./sun.exe -in "house.smd" -out "texture.png"```
 
 |Additional Flags|Default Value|
 |----------------|-------------|

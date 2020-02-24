@@ -1,5 +1,5 @@
 [Project]
-FileName=sun.dev
+FileName=sun_project.dev
 Name=sun
 Type=1
 Ver=2
@@ -19,17 +19,17 @@ ObjectOutput=
 LogOutput=
 LogOutputEnabled=0
 OverrideOutput=0
-OverrideOutputName=sun.exe
+OverrideOutputName=sun_project.exe
 HostApplication=
-UseCustomMakefile=0
-CustomMakefile=
+UseCustomMakefile=1
+CustomMakefile=makefile
 CommandLine=
-Folders=
+Folders=lodepng
 IncludeVersionInfo=1
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=15
+UnitCount=9
 
 [VersionInfo]
 Major=0
@@ -51,7 +51,7 @@ AutoIncBuildNr=1
 SyncProduct=1
 
 [Unit1]
-FileName=main.cpp
+FileName=sun\main.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=geometry.cpp
+FileName=sun\geometry.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -71,7 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=geometry.hpp
+FileName=sun\geometry.hpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -81,7 +81,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=raytracer.cpp
+FileName=sun\raytracer.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -91,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=raytracer.hpp
+FileName=sun\raytracer.hpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -101,7 +101,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=smd_model_reader.cpp
+FileName=sun\smd_model_reader.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -111,7 +111,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=smd_model_reader.hpp
+FileName=sun\smd_model_reader.hpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -121,9 +121,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit8]
-FileName=..\bitmap-machine\binary_rw.cpp
+FileName=lodepng\lodepng.cpp
 CompileCpp=1
-Folder=
+Folder=lodepng
 Compile=1
 Link=1
 Priority=1000
@@ -131,9 +131,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit9]
-FileName=..\bitmap-machine\binary_rw.hpp
+FileName=lodepng\lodepng.h
 CompileCpp=1
-Folder=
+Folder=lodepng
 Compile=1
 Link=1
 Priority=1000

@@ -4,10 +4,9 @@
 * So far it doesn't keep track of bones, it will only read root bones.
 * It doesn't care about materials. For this project we're only concerned about geometry.
 
-## Basic Bitmap File I/O:
-* Submodule can be read about here: https://github.com/busterdash/basic-bitmap-fileio
-* Writes windows bitmaps with of type ```BITMAPINFOHEADER```.
-* Images compatible with Windows 3.1 and above.
+## LodePNG:
+* Submodule available here: https://github.com/lvandeve/lodepng
+* LodePNG is licensed under the zlib license, compatible with the GPL
 
 ## Raytracer:
 * Tosses a two-dimensional grid of photons at the input model.

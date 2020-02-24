@@ -21,6 +21,7 @@
 ==============================================================================================*/
 
 #include "smd_model_reader.hpp"
+#include <stdlib.h>
 
 smd_model_reader::smd_model_reader(std::string file)
 {
